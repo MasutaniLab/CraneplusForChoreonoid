@@ -175,7 +175,7 @@ DEF CRANE Humanoid {
        DEF BASE_LINK Segment {
          mass 0.065
          centerOfMass 0 0 0.02
-         momentsOfInertia [1 0 0 0 1 0 0 0 1]
+         momentsOfInertia [0.00002 0 0 0 0.00002 0 0 0 0.00002]
          children [
            Inline {
              url "CRANEBASE.wrl"
@@ -197,7 +197,7 @@ DEF CRANE Humanoid {
            DEF J1_LINK Segment {
              mass 0.01
              centerOfMass 0 0 0.015
-             momentsOfInertia [1 0 0 0 1 0 0 0 1]
+             momentsOfInertia [0.00002 0 0 0 0.00002 0 0 0 0.00002]
              children [
                Inline {
                  url "CRANEJ1.wrl"
@@ -219,7 +219,7 @@ DEF CRANE Humanoid {
                DEF J2_LINK Segment {
                  mass 0.13
                  centerOfMass 0 0 0.525
-                 momentsOfInertia [1 0 0 0 1 0 0 0 1]
+                 momentsOfInertia [0.00002 0 0 0 0.00002 0 0 0 0.00002]
                  children [
                    Inline {
                      url "CRANEJ2.wrl"
@@ -241,7 +241,7 @@ DEF CRANE Humanoid {
                    DEF J3_LINK Segment {
                      mass 0.1
                      centerOfMass 0 0 0.08
-                     momentsOfInertia [1 0 0 0 1 0 0 0 1]
+                     momentsOfInertia [0.00002 0 0 0 0.00002 0 0 0 0.00002]
                      children [
                        Inline {
                          url "CRANEJ3.wrl"
@@ -263,7 +263,7 @@ DEF CRANE Humanoid {
                        DEF J4_LINK Segment {
                          mass 0.08
                          centerOfMass 0 0 0.02
-                         momentsOfInertia [1 0 0 0 1 0 0 0 1]
+                         momentsOfInertia [0.00002 0 0 0 0.00002 0 0 0 0.00002]
                          children [
                            Inline {
                              url "CRANEJ4.wrl"
@@ -285,7 +285,7 @@ DEF CRANE Humanoid {
                            DEF J5_LINK Segment {
                              mass 0.05
                              centerOfMass 0 0 0.05
-                             momentsOfInertia [1 0 0 0 1 0 0 0 1]
+                             momentsOfInertia [0.00002 0 0 0 0.00002 0 0 0 0.00002]
                              children [
                                Inline {
                                  url "CRANEHAND.wrl"
