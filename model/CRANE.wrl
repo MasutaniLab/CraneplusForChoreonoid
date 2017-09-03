@@ -173,134 +173,134 @@ DEF CRANE Humanoid {
      rotation 0 0 1 0
      children [
        DEF BASE_LINK Segment {
-	 mass 0.065
-	 centerOfMass 0 0 0.02
-	 momentsOfInertia [1 0 0 0 1 0 0 0 1]
-	 children [
-	   Inline {
-	     url "CRANEBASE.wrl"
-	   }
-	 ]
+         mass 0.065
+         centerOfMass 0 0 0.02
+         momentsOfInertia [1 0 0 0 1 0 0 0 1]
+         children [
+           Inline {
+             url "CRANEBASE.wrl"
+           }
+         ]
        }
        DEF J1 Joint {
-	 jointType "rotate"
-	 jointAxis 0 0 1
-	 jointId 0
-	 translation 0 0.0125 0.0479
-	 rotation 0 0 1 0
-	 ulimit 2.617993878
-	 llimit -2.617993878
-	 uvlimit 3.141592653589793
-	 lvlimit -3.141592653589793
+         jointType "rotate"
+         jointAxis 0 0 1
+         jointId 0
+         translation 0 0.0125 0.0479
+         rotation 0 0 1 0
+         ulimit 2.617993878
+         llimit -2.617993878
+         uvlimit 3.141592653589793
+         lvlimit -3.141592653589793
          rotorInertia 0 
-	 children [
-	   DEF J1_LINK Segment {
-	     mass 0.01
-	     centerOfMass 0 0 0.015
-	     momentsOfInertia [1 0 0 0 1 0 0 0 1]
-	     children [
-	       Inline {
-		 url "CRANEJ1.wrl"
-	       }
-	     ]
-	   }
-	   DEF J2 Joint {
-	     jointType "rotate"
-	     jointAxis 1 0 0
-	     jointId 1
-	     translation 0 0 0.027
-	     rotation 0 0 1 0
-	     ulimit 1.79768913
-	     llimit -1.79768913
-	     uvlimit 3.141592653589793
-	     lvlimit -3.141592653589793
+         children [
+           DEF J1_LINK Segment {
+             mass 0.01
+             centerOfMass 0 0 0.015
+             momentsOfInertia [1 0 0 0 1 0 0 0 1]
+             children [
+               Inline {
+                 url "CRANEJ1.wrl"
+               }
+             ]
+           }
+           DEF J2 Joint {
+             jointType "rotate"
+             jointAxis 1 0 0
+             jointId 1
+             translation 0 0 0.027
+             rotation 0 0 1 0
+             ulimit 1.79768913
+             llimit -1.79768913
+             uvlimit 3.141592653589793
+             lvlimit -3.141592653589793
              rotorInertia 0 
-	     children [
-	       DEF J2_LINK Segment {
-		 mass 0.13
-		 centerOfMass 0 0 0.525
-		 momentsOfInertia [1 0 0 0 1 0 0 0 1]
-		 children [
-		   Inline {
-		     url "CRANEJ2.wrl"
-		   }
-		 ]
-	       }
-	       DEF J3 Joint {
-		 jointType "rotate"
-		 jointAxis 1 0 0
-		 jointId 2
-		 translation 0 0 0.083
-		 rotation 0 0 1 0
-		 ulimit 2.443460953
-		 llimit -2.443460953
-		 uvlimit 3.141592653589793
-		 lvlimit -3.141592653589793
+             children [
+               DEF J2_LINK Segment {
+                 mass 0.13
+                 centerOfMass 0 0 0.525
+                 momentsOfInertia [1 0 0 0 1 0 0 0 1]
+                 children [
+                   Inline {
+                     url "CRANEJ2.wrl"
+                   }
+                 ]
+               }
+               DEF J3 Joint {
+                 jointType "rotate"
+                 jointAxis 1 0 0
+                 jointId 2
+                 translation 0 0 0.083
+                 rotation 0 0 1 0
+                 ulimit 2.443460953
+                 llimit -2.443460953
+                 uvlimit 3.141592653589793
+                 lvlimit -3.141592653589793
                  rotorInertia 0 
-		 children [
-		   DEF J3_LINK Segment {
-		     mass 0.1
-		     centerOfMass 0 0 0.08
-		     momentsOfInertia [1 0 0 0 1 0 0 0 1]
-		     children [
-		       Inline {
-			 url "CRANEJ3.wrl"
-		       }
-		     ]
-		   }
-		   DEF J4 Joint {
-		     jointType "rotate"
-		     jointAxis -1 0 0
-		     jointId 3
-		     translation -0.002 0 0.105
-		     rotation 0 0 1 3.1415
-		     ulimit 1.815142422
-		     llimit -1.815142422
-		     uvlimit 3.141592653589793
-		     lvlimit -3.141592653589793
+                 children [
+                   DEF J3_LINK Segment {
+                     mass 0.1
+                     centerOfMass 0 0 0.08
+                     momentsOfInertia [1 0 0 0 1 0 0 0 1]
+                     children [
+                       Inline {
+                         url "CRANEJ3.wrl"
+                       }
+                     ]
+                   }
+                   DEF J4 Joint {
+                     jointType "rotate"
+                     jointAxis -1 0 0
+                     jointId 3
+                     translation -0.002 0 0.105
+                     rotation 0 0 1 3.1415
+                     ulimit 1.815142422
+                     llimit -1.815142422
+                     uvlimit 3.141592653589793
+                     lvlimit -3.141592653589793
                      rotorInertia 0 
-		     children [
-		       DEF J4_LINK Segment {
-			 mass 0.08
-			 centerOfMass 0 0 0.02
-			 momentsOfInertia [1 0 0 0 1 0 0 0 1]
-			 children [
-			   Inline {
-			     url "CRANEJ4.wrl"
-			   }
-			 ]
-		       }
-		       DEF J5 Joint {
-			 jointType "rotate"
-			 jointAxis 0 -1 0
-			 jointId 4
-			 translation -0.01 0 0.05
-			 rotation 0 0 1 3.1415
-			 ulimit 0.6632251158
-			 llimit -0.6806784083
-			 uvlimit 3.141592653589793
-			 lvlimit -3.141592653589793
+                     children [
+                       DEF J4_LINK Segment {
+                         mass 0.08
+                         centerOfMass 0 0 0.02
+                         momentsOfInertia [1 0 0 0 1 0 0 0 1]
+                         children [
+                           Inline {
+                             url "CRANEJ4.wrl"
+                           }
+                         ]
+                       }
+                       DEF J5 Joint {
+                         jointType "rotate"
+                         jointAxis 0 -1 0
+                         jointId 4
+                         translation -0.01 0 0.05
+                         rotation 0 0 1 3.1415
+                         ulimit 0.6632251158
+                         llimit -0.6806784083
+                         uvlimit 3.141592653589793
+                         lvlimit -3.141592653589793
                          rotorInertia 0    
-			 children [
-			   DEF J5_LINK Segment {
-			     mass 0.05
-			     centerOfMass 0 0 0.05
-			     momentsOfInertia [1 0 0 0 1 0 0 0 1]
-			     children [
-			       Inline {
-				 url "CRANEHAND.wrl"
-			       }
-			     ]
-			   }
-			 ]
-		       } # end of joint J5
-		     ]
-		   } # end of joint J4
-		 ]
-	       } # end of joint J3
-	     ]
-	   } # end of joint J2
-	 ]
+                         children [
+                           DEF J5_LINK Segment {
+                             mass 0.05
+                             centerOfMass 0 0 0.05
+                             momentsOfInertia [1 0 0 0 1 0 0 0 1]
+                             children [
+                               Inline {
+                                 url "CRANEHAND.wrl"
+                               }
+                             ]
+                           }
+                         ]
+                       } # end of joint J5
+                     ]
+                   } # end of joint J4
+                 ]
+               } # end of joint J3
+             ]
+           } # end of joint J2
+         ]
        } # end of joint J1
      ]
    } # end of joint BASE
