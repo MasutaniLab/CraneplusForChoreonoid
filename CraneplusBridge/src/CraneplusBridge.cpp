@@ -212,8 +212,7 @@ RTC::ReturnCode_t CraneplusBridge::onExecute(RTC::UniqueId ec_id)
       m_armSign[i] = sign(xt);
       if (abs(xt) > pow(m_armVelocityLimit[i],2)/AccelerationLimit) {
         m_armAccTime[i] = m_armVelocityLimit[i]/AccelerationLimit;
-        m_armTotalTime[i] = 2*m_armAccTime[i] 
-          + (abs(xt)-pow(m_armVelocityLimit[i],2)/AccelerationLimit)/m_armVelocityLimit[i];
+        m_armTotalTime[i] = abs(xt)/m_armVelocityLimit[i] + m_armVelocityLimit[i]/AccelerationLimit;
       } else {
         m_armAccTime[i] = sqrt(abs(xt)/AccelerationLimit);
         m_armTotalTime[i] = 2*m_armAccTime[i];
@@ -274,9 +273,9 @@ RTC::ReturnCode_t CraneplusBridge::onExecute(RTC::UniqueId ec_id)
       if (abs(m_armI[i]) < 10) {
         m_armI[i] += dx*dt;
       }
-      const double kp = 40;
+      const double kp = 10;
       const double kd = 1;
-      const double ki = 100;
+      const double ki = 2;
       double torque = -kp*dx -kd*dv -ki*m_armI[i];
       if (!isfinite(torque)) {
         torque = 0;
