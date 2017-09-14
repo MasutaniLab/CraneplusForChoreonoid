@@ -69,7 +69,7 @@ items:
               data: 
                 isImmediateMode: true
                 controllerOptions: ""
-                moduleName: "${PROJECT_DIR}/CraneplusBridge/build/src/Release/CraneplusBridge.dll"
+                moduleName: "${PROJECT_DIR}/DynamixelSim/build/src/Release/DynamixelSim.dll"
                 confFileName: "${PROJECT_DIR}/CRANE.conf"
                 configurationMode: "Use Configuration File"
                 AutoConnect: false
@@ -230,6 +230,18 @@ toolbars:
     speedScale: 1
     syncToOngoingUpdates: true
     autoExpansion: true
+  "BodyBar": 
+    current: 3
+  "LeggedBodyBar": 
+    stanceWidth: 0.15
+  "KinematicsBar": 
+    mode: AUTO
+    enablePositionDragger: true
+    penetrationBlock: false
+    collisionLinkHighlight: false
+    snapDistance: 0.025
+    penetrationBlockDepth: 0.0005
+    lazyCollisionDetectionMode: true
   "BodyMotionGenerationBar": 
     autoGenerationForNewBody: true
     balancer: false
@@ -263,18 +275,6 @@ toolbars:
     waistHeightRelaxation: false
     gravity: 9.8
     dynamicsTimeRatio: 1
-  "KinematicsBar": 
-    mode: AUTO
-    enablePositionDragger: true
-    penetrationBlock: false
-    collisionLinkHighlight: false
-    snapDistance: 0.025
-    penetrationBlockDepth: 0.0005
-    lazyCollisionDetectionMode: true
-  "BodyBar": 
-    current: 3
-  "LeggedBodyBar": 
-    stanceWidth: 0.15
 Body: 
   "BodyMotionEngine": 
     updateJointVelocities: false
@@ -309,12 +309,12 @@ viewAreas:
     contents: 
       type: splitter
       orientation: horizontal
-      sizes: [ 368, 1547 ]
+      sizes: [ 368, 1545 ]
       children: 
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 453, 452 ]
+          sizes: [ 475, 473 ]
           children: 
             - 
               type: pane
@@ -327,12 +327,12 @@ viewAreas:
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 646, 259 ]
+          sizes: [ 677, 271 ]
           children: 
             - 
               type: splitter
               orientation: horizontal
-              sizes: [ 728, 814 ]
+              sizes: [ 726, 812 ]
               children: 
                 - 
                   type: pane

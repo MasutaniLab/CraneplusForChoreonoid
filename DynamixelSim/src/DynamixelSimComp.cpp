@@ -1,6 +1,6 @@
 // -*- C++ -*-
 /*!
- * @file CraneplusBridgeComp.cpp
+ * @file DynamixelSimComp.cpp
  * @brief Standalone component
  * @date $Date$
  *
@@ -11,16 +11,16 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
-#include "CraneplusBridge.h"
+#include "DynamixelSim.h"
 
 
 void MyModuleInit(RTC::Manager* manager)
 {
-  CraneplusBridgeInit(manager);
+  DynamixelSimInit(manager);
   RTC::RtcBase* comp;
 
   // Create a component
-  comp = manager->createComponent("CraneplusBridge");
+  comp = manager->createComponent("DynamixelSim");
 
   if (comp==NULL)
   {

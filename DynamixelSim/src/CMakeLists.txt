@@ -1,5 +1,5 @@
-set(comp_srcs CraneplusBridge.cpp )
-set(standalone_srcs CraneplusBridgeComp.cpp)
+set(comp_srcs DynamixelSim.cpp )
+set(standalone_srcs DynamixelSimComp.cpp)
 
 if (DEFINED OPENRTM_INCLUDE_DIRS)
   string(REGEX REPLACE "-I" ";"

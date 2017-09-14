@@ -1,4 +1,4 @@
-CraneplusBridgeName - English
+DynamixelSimName - English
 ========================
 
 .. toctree::
@@ -19,7 +19,7 @@ For a full list of classes and functions, see the `API documentation`_.
 Requirements
 ============
 
-CraneplusBridge uses the `CMake build system`. You will need at least version
+DynamixelSim uses the `CMake build system`. You will need at least version
 2.8 to be able to build the component.
 
 .. _`CMAke build system`:
@@ -43,24 +43,24 @@ recommended method of installation in Windows.
   to take effect before using the component.
 
 The component can be launched by double-clicking the
-``CraneplusBridgeComp`` executable. The ``CraneplusBridge`` library
+``DynamixelSimComp`` executable. The ``DynamixelSim`` library
 is available for loading into a manager, using the initialisation function
-``CraneplusBridgeInit``.
+``DynamixelSimInit``.
 
 From source
 -----------
 
-Follow these steps to install CraneplusBridge from source in any operating
+Follow these steps to install DynamixelSim from source in any operating
 system:
 
 - Download the source, either from the repository or a source archive,
   and extract it somewhere::
 
-    tar -xvzf CraneplusBridge-1.0.0.tar.gz
+    tar -xvzf DynamixelSim-1.0.0.tar.gz
 
 - Change to the directory containing the extracted source::
 
-    cd CraneplusBridge-1.0.0
+    cd DynamixelSim-1.0.0
 
 - Create a directory called ``build``::
 
@@ -91,10 +91,10 @@ system:
 The component is now ready for use. See the next section for instructions on
 configuring the component.
 
-CraneplusBridge can be launched in stand-alone mode by executing the
-``CraneplusBridgeComp`` executable (installed into ``${prefix}/components/bin``).
-Alternatively, ``libCraneplusBridge.so`` can be loaded into a manager, using the
-initialisation function ``CraneplusBridgeInit``. This shared object can be found in
+DynamixelSim can be launched in stand-alone mode by executing the
+``DynamixelSimComp`` executable (installed into ``${prefix}/components/bin``).
+Alternatively, ``libDynamixelSim.so`` can be loaded into a manager, using the
+initialisation function ``DynamixelSimInit``. This shared object can be found in
 ``${prefix}/components/lib`` or ``${prefix}/components/lib64``.
 
 
@@ -119,17 +119,17 @@ Name            Type        Data type                      Purpose
 =============== =========== ============================== =======
 goalPosition    InPort      RTC::TimedUShortSeq            
 movingSpeed     InPort      RTC::TimedUShortSeq            
-armAngle        InPort      RTC::TimedDoubleSeq            
+angle           InPort      RTC::TimedDoubleSeq            
 presentPosition OutPort     RTC::TimedUShortSeq            
 moving          OutPort     RTC::TimedUShortSeq            
-armTorque       OutPort     RTC::TimedDoubleSeq            
+torque          OutPort     RTC::TimedDoubleSeq            
 =============== =========== ============================== =======
 
 Examples
 ========
 
 An example configuration file is provided in the
-``${prefix}/components/share/CraneplusBridge/examples/conf/`` directory.
+``${prefix}/components/share/DynamixelSim/examples/conf/`` directory.
 
 Changelog
 =========
