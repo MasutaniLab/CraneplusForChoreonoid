@@ -182,7 +182,7 @@ RTC::ReturnCode_t DynamixelSim::onDeactivated(RTC::UniqueId ec_id)
 
 RTC::ReturnCode_t DynamixelSim::onExecute(RTC::UniqueId ec_id)
 {
-  const double EpsAngle = 1e-3; // [rad]
+  const double EpsAngle = 2e-2; // [rad]
   const double EpsVelocity = 1e-1; // [rad/s]
   const double AccelerationLimit = 20; // [rad/s^2]
 
@@ -266,9 +266,16 @@ RTC::ReturnCode_t DynamixelSim::onExecute(RTC::UniqueId ec_id)
       if (abs(m_integral[i]) < 10) {
         m_integral[i] += dx*dt;
       }
+#if 0
+      //ðŒ‚ªˆ«‚¢‚Æ”­ŽU‚·‚éê‡‚ ‚è
       const double kp = 39.5;
       const double kd = 1.5;
       const double ki = 10;
+#else
+      const double kp = 10;
+      const double kd = 1;
+      const double ki = 2;
+#endif
       double torque = -kp*dx -kd*dv -ki*m_integral[i];
       if (!isfinite(torque)) {
         torque = 0;
