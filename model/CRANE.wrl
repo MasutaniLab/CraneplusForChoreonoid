@@ -174,20 +174,26 @@ DEF CRANE Humanoid {
      children [
        DEF BASE_LINK Segment {
          mass 0.065
-         centerOfMass 0 0 0.02
+         centerOfMass -0.00625 0 0.02
          momentsOfInertia [0.00002 0 0 0 0.00002 0 0 0 0.00002]
          children [
-           Inline {
-             url "CRANEBASE.wrl"
-           }
+	   Transform {
+             translation -0.0125 0.0 0.0
+             rotation 0 0 1 -1.57079632679489661923
+	     children [
+               Inline {
+                 url "CRANEBASE.wrl"
+               }
+	     ]
+	   }
          ]
        }
        DEF J1 Joint {
          jointType "rotate"
          jointAxis 0 0 1
          jointId 0
-         translation 0 0.0125 0.0479
-         rotation 0 0 1 0
+         translation 0 0.0 0.0479
+         rotation 0 0 1 -1.57079632679489661923
          ulimit 2.617993878
          llimit -2.617993878
          uvlimit 3.141592653589793
@@ -206,7 +212,7 @@ DEF CRANE Humanoid {
            }
            DEF J2 Joint {
              jointType "rotate"
-             jointAxis 1 0 0
+             jointAxis -1 0 0
              jointId 1
              translation 0 0 0.027
              rotation 0 0 1 0
