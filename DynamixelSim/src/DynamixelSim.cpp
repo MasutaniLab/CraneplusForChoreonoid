@@ -29,6 +29,7 @@ const double Dt = 0.002; //[sec]
 const double SpeedToRps = 0.111*2*M_PI/60.0; //AX-12の内部表現値からrad/sへの変換係数
 const double PositionToRad = 300.0/1024*M_PI/180.0; //AX-12の内部表現値からradへの変換係数
 const double RadToPosition = 1/PositionToRad; //radからAX-12の内部表現値への変換係数
+const double MaxVelocity = 59*2*M_PI/60.0; //AX-12の仕様 無負荷速度
 
 // Module specification
 // <rtc-template block="module_spec">
@@ -190,7 +191,14 @@ RTC::ReturnCode_t DynamixelSim::onExecute(RTC::UniqueId ec_id)
   if (m_movingSpeedIn.isNew()) {
     m_movingSpeedIn.read();
     for (int i=0; i<m_NUM_ACTUATOR; i++) {
-      m_velocityLimit[i] = m_movingSpeed.data[i]*SpeedToRps; 
+      if (m_movingSpeed.data[i] == 0) {
+        m_velocityLimit[i] = MaxVelocity;
+      } else {
+        m_velocityLimit[i] = m_movingSpeed.data[i]*SpeedToRps;
+        if (m_velocityLimit[i] > MaxVelocity) {
+          m_velocityLimit[i] = MaxVelocity;
+        }
+      }
     }
   }
 
