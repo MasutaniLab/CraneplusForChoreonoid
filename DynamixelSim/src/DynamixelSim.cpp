@@ -263,30 +263,31 @@ RTC::ReturnCode_t DynamixelSim::onExecute(RTC::UniqueId ec_id)
       double v = (m_angleCurrent[i] - m_anglePrev[i])/dt;
       double dx = m_angleCurrent[i] - xd;
       double dv = v - vd;
-      if (abs(m_integral[i]) < 10) {
+      if (abs(m_integral[i]) < 10) { //要検討：積分値の上限
         m_integral[i] += dx*dt;
       }
-#if 0
-      //条件が悪いと発散する場合あり
+
+      //要検討：PIDフィードバックゲイン
       const double kp = 39.5;
       const double kd = 1.5;
       const double ki = 10;
-#else
-      const double kp = 10;
-      const double kd = 1;
-      const double ki = 2;
-#endif
+
       double torque = -kp*dx -kd*dv -ki*m_integral[i];
+
+      //トルクが異常な値になった時の予防
       if (!isfinite(torque)) {
         torque = 0;
+      }
+      //トルクの上限を超えないように
+      const double maxTorque = 1.5; //[Nm] AX12の仕様上の停動トルク
+      if (torque > maxTorque) {
+        torque = maxTorque;
+      } else if (torque < -maxTorque) {
+        torque = -maxTorque;
       }
       m_torque.data[i] = torque;
       m_anglePrev[i] = m_angleCurrent[i];//一つ前の関節角度を保持
     }
-    //for (int i=0; i<m_NUM_ACTUATOR; i++) {
-    //  cout << i << " " << m_torque.data[i] << endl;
-    //}
-    //cout << endl;
     m_torqueOut.write();
 
     if (m_currentTime-m_prevOutputTime > OutputDt-0.9*Dt) {
