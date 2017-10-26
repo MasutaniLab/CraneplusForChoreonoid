@@ -60,7 +60,8 @@ endif(${OpenRTM_FOUND})
 # Universal settings
 #enable_testing()
 
-set(CMAKE_INSTALL_PREFIX ${PROJECT_BINARY_DIR})
+set(CMAKE_INSTALL_PREFIX ${PROJECT_BINARY_DIR}
+    CACHE PATH "where to install" FORCE)
 
 # Subdirectories
 add_subdirectory(cmake)
