@@ -60,6 +60,8 @@ endif(${OpenRTM_FOUND})
 # Universal settings
 #enable_testing()
 
+set(CMAKE_INSTALL_PREFIX ${PROJECT_BINARY_DIR})
+
 # Subdirectories
 add_subdirectory(cmake)
 if(BUILD_DOCUMENTATION)
