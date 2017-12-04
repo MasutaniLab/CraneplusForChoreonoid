@@ -3,10 +3,10 @@ if(POLICY CMP0048)
   cmake_policy(SET CMP0048 OLD)
 endif()
 
-project(CraneplusBridge)
+project(DynamixelSim)
 string(TOLOWER ${PROJECT_NAME} PROJECT_NAME_LOWER)
 include("${PROJECT_SOURCE_DIR}/cmake/utils.cmake")
-set(PROJECT_VERSION 1.0.0 CACHE STRING "CraneplusBridge version")
+set(PROJECT_VERSION 1.0.0 CACHE STRING "DynamixelSim version")
 DISSECT_VERSION()
 set(PROJECT_DESCRIPTION "${rtcParam.description}")
 set(PROJECT_VENDOR "MasutaniLab")
@@ -59,6 +59,9 @@ endif(${OpenRTM_FOUND})
 
 # Universal settings
 #enable_testing()
+
+set(CMAKE_INSTALL_PREFIX ${PROJECT_BINARY_DIR}
+    CACHE PATH "where to install" FORCE)
 
 # Subdirectories
 add_subdirectory(cmake)

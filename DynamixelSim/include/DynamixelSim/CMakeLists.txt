@@ -1,4 +1,4 @@
-set(hdrs CraneplusBridge.h
+set(hdrs DynamixelSim.h
     PARENT_SCOPE
     )
 

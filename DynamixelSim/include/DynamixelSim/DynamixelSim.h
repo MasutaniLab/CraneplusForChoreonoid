@@ -1,14 +1,14 @@
 // -*- C++ -*-
 /*!
- * @file  CraneplusBridge.h
+ * @file  DynamixelSim.h
  * @brief ${rtcParam.description}
  * @date  $Date$
  *
  * $Id$
  */
 
-#ifndef CRANEPLUSBRIDGE_H
-#define CRANEPLUSBRIDGE_H
+#ifndef DYNAMIXELSIM_H
+#define DYNAMIXELSIM_H
 
 #include <vector>
 
@@ -39,11 +39,11 @@
 using namespace RTC;
 
 /*!
- * @class CraneplusBridge
+ * @class DynamixelSim
  * @brief ${rtcParam.description}
  *
  */
-class CraneplusBridge
+class DynamixelSim
   : public RTC::DataFlowComponentBase
 {
  public:
@@ -51,12 +51,12 @@ class CraneplusBridge
    * @brief constructor
    * @param manager Maneger Object
    */
-  CraneplusBridge(RTC::Manager* manager);
+  DynamixelSim(RTC::Manager* manager);
 
   /*!
    * @brief destructor
    */
-  ~CraneplusBridge();
+  ~DynamixelSim();
 
   // <rtc-template block="public_attribute">
   
@@ -249,10 +249,10 @@ class CraneplusBridge
   /*!
    */
   InPort<RTC::TimedUShortSeq> m_movingSpeedIn;
-  RTC::TimedDoubleSeq m_armAngle;
+  RTC::TimedDoubleSeq m_angle;
   /*!
    */
-  InPort<RTC::TimedDoubleSeq> m_armAngleIn;
+  InPort<RTC::TimedDoubleSeq> m_angleIn;
   
   // </rtc-template>
 
@@ -267,10 +267,10 @@ class CraneplusBridge
   /*!
    */
   OutPort<RTC::TimedUShortSeq> m_movingOut;
-  RTC::TimedDoubleSeq m_armTorque;
+  RTC::TimedDoubleSeq m_torque;
   /*!
    */
-  OutPort<RTC::TimedDoubleSeq> m_armTorqueOut;
+  OutPort<RTC::TimedDoubleSeq> m_torqueOut;
   
   // </rtc-template>
 
@@ -297,28 +297,27 @@ class CraneplusBridge
   // <rtc-template block="private_operation">
   
   // </rtc-template>
-   double m_armPrevTime;
-   double m_armCurrentTime;
-   double m_armPrevOutputTime;
-   double m_armStartTime;
-   std::vector<double> m_armTotalTime; //全体時間区間
-   std::vector<double> m_armAccTime; //加速時間区間
-   std::vector<double> m_armAngleTarget; //関節角度指令値（関節1～5 0は使わない）
-   std::vector<double> m_armAnglePrev; //一つ前の関節角度（関節1～5 0は使わない）
-   std::vector<double> m_armVelocityLimit; //関節速度上限（関節1～5 0は使わない）
-   std::vector<double> m_armAngleCurrent; //現在の関節角度（関節1～5 0は使わない）
-   std::vector<double> m_armVelocityTarget; //関節速度指令値（関節1～5 0は使わない）
-   std::vector<double> m_armStartAngle; //制御開始関節角度（関節1～5 0は使わない）
-   std::vector<double> m_armSign; //動作方向（関節1～5 0は使わない）
-   std::vector<double> m_armI; //偏差の積分（関節1～5 0は使わない）
-   bool m_armFirst;
+   double m_prevTime;
+   double m_currentTime;
+   double m_prevOutputTime;
+   double m_startTime;
+   std::vector<double> m_totalTime; //全体時間区間
+   std::vector<double> m_accTime; //加速時間区間
+   std::vector<double> m_angleTarget; //関節角度指令値
+   std::vector<double> m_anglePrev; //一つ前の関節角度
+   std::vector<double> m_velocityLimit; //関節速度上限
+   std::vector<double> m_angleCurrent; //現在の関節角度
+   std::vector<double> m_angleStart; //制御開始関節角度
+   std::vector<double> m_sign; //動作方向
+   std::vector<double> m_integral; //偏差の積分
+   bool m_first;
 
 };
 
 
 extern "C"
 {
-  DLL_EXPORT void CraneplusBridgeInit(RTC::Manager* manager);
+  DLL_EXPORT void DynamixelSimInit(RTC::Manager* manager);
 };
 
-#endif // CRANEPLUSBRIDGE_H
+#endif // DYNAMIXELSIM_H

@@ -1,4 +1,4 @@
-CraneplusBridge - 日本語
+DynamixelSim - 日本語
 =======================
 
 
@@ -13,9 +13,9 @@ CraneplusBridge - 日本語
 条件
 ====
 
-CraneplusBridgeはOpenRTM-aist 1.0.0以上のC++版が必要です。
+DynamixelSimはOpenRTM-aist 1.0.0以上のC++版が必要です。
 
-CraneplusBridgeは CMake_ を使います。CMake 2.8以上が必要です。
+DynamixelSimは CMake_ を使います。CMake 2.8以上が必要です。
 
 .. _CMAke:
    http://www.cmake.org
@@ -36,8 +36,8 @@ Windowsのユーザはインストーラパッケージを使用してコンポ�
 - 環境変数の変更を適用するため、コンポーネントを使用する前にコンピューターを
   再起動する必要があるかもしれません。
 
-CraneplusBridgeは ``CraneplusBridgeComp`` の実行をダブルクリックして実行することが
-できます。あるいは、 ``CraneplusBridge`` を初期化関数の ``CraneplusBridgeInit`` を利用して、
+DynamixelSimは ``DynamixelSimComp`` の実行をダブルクリックして実行することが
+できます。あるいは、 ``DynamixelSim`` を初期化関数の ``DynamixelSimInit`` を利用して、
 マネージャにロードすることができます。
 
 ソースから
@@ -47,11 +47,11 @@ CraneplusBridgeは ``CraneplusBridgeComp`` の実行をダブルクリックし�
 
 - ソースをダウンロードして解凍してください::
 
-    tar -xvzf CraneplusBridge-1.0.0.tar.gz
+    tar -xvzf DynamixelSim-1.0.0.tar.gz
 
 - 解凍されたフォルダに入ってください::
 
-    cd CraneplusBridge-1.0.0
+    cd DynamixelSim-1.0.0
 
 - ``build`` フォルダを作ってください::
 
@@ -82,9 +82,9 @@ CraneplusBridgeは ``CraneplusBridgeComp`` の実行をダブルクリックし�
 ここまでで、コンポーネントが使えるようになりました。コンフィグレーションは次のセクションを
 参照してください。
 
-CraneplusBridgeは ``CraneplusBridgeComp`` を実行（ ``${prefix}/components/bin`` に
+DynamixelSimは ``DynamixelSimComp`` を実行（ ``${prefix}/components/bin`` に
 インストールされます）することでスタンドアローンモードで実行することができます。
-あるいは、 ``libCraneplusBridge.so`` を初期化関数の ``CraneplusBridgeInit`` を利用して、
+あるいは、 ``libDynamixelSim.so`` を初期化関数の ``DynamixelSimInit`` を利用して、
 マネージャにロードすることができます。このライブラリは ``${prefix}/components/lib`` 
 または ``${prefix}/components/lib64`` にインストールされます。
 
@@ -111,16 +111,16 @@ NUM_ACTUATOR     short              5
 =============== =========== ============================== ====
 goalPosition    InPort      RTC::TimedUShortSeq            
 movingSpeed     InPort      RTC::TimedUShortSeq            
-armAngle        InPort      RTC::TimedDoubleSeq            
+angle           InPort      RTC::TimedDoubleSeq            
 presentPosition OutPort     RTC::TimedUShortSeq            
 moving          OutPort     RTC::TimedUShortSeq            
-armTorque       OutPort     RTC::TimedDoubleSeq            
+torque          OutPort     RTC::TimedDoubleSeq            
 =============== =========== ============================== ====
 
 例
 ==
 
-例のrtc.confファイルは ``${prefix}/components/share/CraneplusBridge/examples/conf/``
+例のrtc.confファイルは ``${prefix}/components/share/DynamixelSim/examples/conf/``
 フォルダにインストールされています。
 
 Changelog

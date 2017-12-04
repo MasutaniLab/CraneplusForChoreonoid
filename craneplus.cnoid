@@ -69,7 +69,7 @@ items:
               data: 
                 isImmediateMode: true
                 controllerOptions: ""
-                moduleName: "${PROJECT_DIR}/CraneplusBridge/build/src/Release/CraneplusBridge.dll"
+                moduleName: "${PROJECT_DIR}/DynamixelSim/build/src/Release/DynamixelSim.dll"
                 confFileName: "${PROJECT_DIR}/CRANE.conf"
                 configurationMode: "Use Configuration File"
                 AutoConnect: false
@@ -105,6 +105,29 @@ items:
             kinematicWalking: false
             2Dmode: false
             oldAccelSensorMode: false
+        - 
+          id: 6
+          name: "bottle"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "${PROJECT_DIR}/bottle.wrl"
+            currentBaseLink: "freeJoint"
+            rootPosition: [ 0.2, 0, 0.1 ]
+            rootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
+              0, 0, 1 ]
+            jointPositions: [  ]
+            initialRootPosition: [ 0.2, 0, 0.1 ]
+            initialRootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
+              0, 0, 1 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
 views: 
   - 
     id: 0
@@ -122,8 +145,8 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      selected: [ 4 ]
-      checked: [ 2, 3 ]
+      selected: [ 3 ]
+      checked: [ 2, 3, 6 ]
       expanded: [ 1, 3, 4 ]
   - 
     id: 3
@@ -172,9 +195,9 @@ views:
           fieldOfView: 0.6978
           near: 0.01
           far: 100
-          eye: [ 0.602960203, 0.465508508, 0.490409057 ]
-          direction: [ -0.833905878, -0.492694404, -0.248703059 ]
-          up: [ -0.214122726, -0.126509564, 0.968579779 ]
+          eye: [ 0.306030609, -0.609394693, 0.520182137 ]
+          direction: [ -0.303859764, 0.847008066, -0.436172649 ]
+          up: [ -0.147283884, 0.41055333, 0.899863001 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -263,6 +286,10 @@ toolbars:
     waistHeightRelaxation: false
     gravity: 9.8
     dynamicsTimeRatio: 1
+  "BodyBar": 
+    current: 3
+  "LeggedBodyBar": 
+    stanceWidth: 0.15
   "KinematicsBar": 
     mode: AUTO
     enablePositionDragger: true
@@ -271,10 +298,6 @@ toolbars:
     snapDistance: 0.025
     penetrationBlockDepth: 0.0005
     lazyCollisionDetectionMode: true
-  "BodyBar": 
-    current: 3
-  "LeggedBodyBar": 
-    stanceWidth: 0.15
 Body: 
   "BodyMotionEngine": 
     updateJointVelocities: false
@@ -287,6 +310,11 @@ Body:
         showZmp: false
       - 
         bodyItem: 3
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 6
         showCenterOfMass: false
         showPpcom: false
         showZmp: false
@@ -309,12 +337,12 @@ viewAreas:
     contents: 
       type: splitter
       orientation: horizontal
-      sizes: [ 368, 1547 ]
+      sizes: [ 368, 1545 ]
       children: 
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 453, 452 ]
+          sizes: [ 475, 473 ]
           children: 
             - 
               type: pane
@@ -327,12 +355,12 @@ viewAreas:
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 646, 259 ]
+          sizes: [ 677, 271 ]
           children: 
             - 
               type: splitter
               orientation: horizontal
-              sizes: [ 728, 814 ]
+              sizes: [ 726, 812 ]
               children: 
                 - 
                   type: pane
