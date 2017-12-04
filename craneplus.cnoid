@@ -49,7 +49,7 @@ items:
               1, 0, 0, 
               0, 1, 0, 
               0, 0, 1 ]
-            jointPositions: [  0.000000,  0.000000,  0.000000,  0.000000,  0.000000 ]
+            jointPositions: [  0.000000, -0.000000,  0.000000, -0.000000,  0.000000 ]
             initialRootPosition: [ 0, 0, 0 ]
             initialRootAttitude: [ 
               1, 0, 0, 
@@ -69,7 +69,7 @@ items:
               data: 
                 isImmediateMode: true
                 controllerOptions: ""
-                moduleName: "${PROJECT_DIR}/DynamixelSim/build/src/Release/DynamixelSim.dll"
+                moduleName: "${PROJECT_DIR}/DynamixelSim/build/module/DynamixelSim"
                 confFileName: "${PROJECT_DIR}/CRANE.conf"
                 configurationMode: "Use Configuration File"
                 AutoConnect: false
@@ -113,11 +113,11 @@ items:
           data: 
             modelFile: "${PROJECT_DIR}/bottle.wrl"
             currentBaseLink: "freeJoint"
-            rootPosition: [ 0.2, 0, 0.1 ]
+            rootPosition: [ 0.199999565, -7.84767544e-005, 0.0999005053 ]
             rootAttitude: [ 
-              1, 0, 0, 
-              0, 1, 0, 
-              0, 0, 1 ]
+              1, -8.94506268e-006, -6.90157962e-006, 
+              8.93964593e-006, 0.999999692, -0.000784458062, 
+              6.90859452e-006, 0.000784458, 0.999999692 ]
             jointPositions: [  ]
             initialRootPosition: [ 0.2, 0, 0.1 ]
             initialRootAttitude: [ 
@@ -145,9 +145,9 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      selected: [ 3 ]
+      selected: [ 4, 5 ]
       checked: [ 2, 3, 6 ]
-      expanded: [ 1, 3, 4 ]
+      expanded: [ 1, 3, 4, 6 ]
   - 
     id: 3
     plugin: Base
@@ -197,7 +197,7 @@ views:
           far: 100
           eye: [ 0.306030609, -0.609394693, 0.520182137 ]
           direction: [ -0.303859764, 0.847008066, -0.436172649 ]
-          up: [ -0.147283884, 0.41055333, 0.899863001 ]
+          up: [ -0.147283884, 0.410553331, 0.899863001 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -249,10 +249,22 @@ toolbars:
     frameRate: 500
     playbackFrameRate: 50
     idleLoopDrivenMode: false
-    currentTime: 6.514
+    currentTime: 7.316
     speedScale: 1
     syncToOngoingUpdates: true
     autoExpansion: true
+  "KinematicsBar": 
+    mode: AUTO
+    enablePositionDragger: true
+    penetrationBlock: false
+    collisionLinkHighlight: false
+    snapDistance: 0.025
+    penetrationBlockDepth: 0.0005
+    lazyCollisionDetectionMode: true
+  "LeggedBodyBar": 
+    stanceWidth: 0.15
+  "BodyBar": 
+    current: 3
   "BodyMotionGenerationBar": 
     autoGenerationForNewBody: true
     balancer: false
@@ -286,18 +298,6 @@ toolbars:
     waistHeightRelaxation: false
     gravity: 9.8
     dynamicsTimeRatio: 1
-  "BodyBar": 
-    current: 3
-  "LeggedBodyBar": 
-    stanceWidth: 0.15
-  "KinematicsBar": 
-    mode: AUTO
-    enablePositionDragger: true
-    penetrationBlock: false
-    collisionLinkHighlight: false
-    snapDistance: 0.025
-    penetrationBlockDepth: 0.0005
-    lazyCollisionDetectionMode: true
 Body: 
   "BodyMotionEngine": 
     updateJointVelocities: false
@@ -337,12 +337,12 @@ viewAreas:
     contents: 
       type: splitter
       orientation: horizontal
-      sizes: [ 368, 1545 ]
+      sizes: [ 368, 1547 ]
       children: 
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 475, 473 ]
+          sizes: [ 448, 446 ]
           children: 
             - 
               type: pane
@@ -355,12 +355,12 @@ viewAreas:
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 677, 271 ]
+          sizes: [ 638, 256 ]
           children: 
             - 
               type: splitter
               orientation: horizontal
-              sizes: [ 726, 812 ]
+              sizes: [ 728, 814 ]
               children: 
                 - 
                   type: pane
