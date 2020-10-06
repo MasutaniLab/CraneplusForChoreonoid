@@ -14,6 +14,7 @@
 #include "DynamixelSim.h"
 using namespace std;
 
+#if _MSC_VER <= 1900
 template <typename T>
 bool isfinite(T x)
 {
@@ -21,6 +22,7 @@ bool isfinite(T x)
     && (x != std::numeric_limits<T>::infinity())
     && (x != -std::numeric_limits<T>::infinity());
 }
+#endif
 
 int sign(double x);
 
