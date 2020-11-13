@@ -1,0 +1,110 @@
+format: ChoreonoidBody
+formatVersion: 1.0
+angleUnit: degree
+name: CRANE
+
+links:
+  -
+    name: BASE
+    jointType: fixed
+    mass: 0.065
+    centerOfMass: [ -0.00625, 0, 0.02 ]
+    inertia: [
+      0.00002,         0,               0,
+      0,               0.00002,         0,
+      0,               0,               0.00002 ]
+    elements:
+      Transform:
+        translation: [-0.0125, 0.0, 0.0]
+        rotation: [0, 0, 1, -90 ]
+        elements: { Resource: { uri: "CRANEBASE.wrl" } }
+  -
+    name: J1
+    parent: BASE
+    jointType: revolute
+    jointAxis: [ 0, 0, 1 ]
+    jointId: 0
+    translation: [ 0, 0, 0.0479 ]
+    rotation: [ 0, 0, 1, -90 ]
+    jointRange: [ -150, 150 ]
+    jointVelocityRange: [ -180, 180 ]
+    mass: 0.01
+    centerOfMass: [ 0, 0, 0.015 ]
+    inertia: [
+      0.00002,         0,               0,
+      0,               0.00002,         0,
+      0,               0,               0.00002 ]
+    rotorInertia: 0.01
+    elements: { Resource: { uri: "CRANEJ1.wrl" } }
+  -
+    name: J2
+    parent: J1
+    jointType: revolute
+    jointAxis: [ -1, 0, 0 ]
+    jointId: 1
+    translation: [ 0, 0, 0.027 ]
+    rotation: [ 0, 0, 1, 0 ]
+    jointRange: [ -103, 103 ]
+    jointVelocityRange: [ -180, 180 ]
+    mass: 0.13
+    centerOfMass: [ 0, 0, 0.045 ]
+    inertia: [
+      0.00002,         0,               0,
+      0,               0.00002,         0,
+      0,               0,               0.00002 ]
+    rotorInertia: 0.01
+    elements: { Resource: { uri: "CRANEJ2.wrl" } }
+  -
+    name: J3
+    parent: J2
+    jointType: revolute
+    jointAxis: [ 1, 0, 0 ]
+    jointId: 2
+    translation: [ 0, 0, 0.083 ]
+    rotation: [ 0, 0, 1, 0 ]
+    jointRange: [ -140, 140 ]
+    jointVelocityRange: [ -180, 180 ]
+    mass: 0.1
+    centerOfMass: [ 0, 0, 0.08]
+    inertia: [
+      0.00002,         0,               0,
+      0,               0.00002,         0,
+      0,               0,               0.00002 ]
+    rotorInertia: 0.01
+    elements: { Resource: { uri: "CRANEJ3.wrl" } }
+  -
+    name: J4
+    parent: J3
+    jointType: revolute
+    jointAxis: [ -1, 0, 0 ]
+    jointId: 3
+    translation: [ -0.002, 0, 0.105 ]
+    rotation: [ 0, 0, 1, 180 ]
+    jointRange: [ -104, 104 ]
+    jointVelocityRange: [ -180, 180 ]
+    mass: 0.08
+    centerOfMass: [ 0, 0, 0.02]
+    inertia: [
+      0.00002,         0,               0,
+      0,               0.00002,         0,
+      0,               0,               0.00002 ]
+    rotorInertia: 0.01
+    elements: { Resource: { uri: "CRANEJ4.wrl" } }
+  -
+    name: J5
+    parent: J4
+    jointType: revolute
+    jointAxis: [ 0, -1, 0 ]
+    jointId: 4
+    translation: [ -0.01, 0, 0.05 ]
+    rotation: [ 0, 0, 1, 180 ]
+    jointRange: [ -39, 38 ]
+    jointVelocityRange: [ -180, 180 ]
+    mass: 0.05
+    centerOfMass: [ 0, 0, 0.05]
+    inertia: [
+      0.00002,         0,               0,
+      0,               0.00002,         0,
+      0,               0,               0.00002 ]
+    rotorInertia: 0.01
+    elements: { Resource: { uri: "CRANEHAND.wrl" } }
