@@ -41,7 +41,7 @@
 - [CraneplusForChoreonoid](https://github.com/MasutaniLab/CraneplusForChoreonoid)をクローンかダウンロードする．
 - CMake
   - ソースディレクトリはトップの下の`AX12IoRTC`
-  - ビルドディレクトリは`AX12IoRYC/build`
+  - ビルドディレクトリは`AX12IoRTC/build`
   - Windowsの場合
     - ConfigureはVisual Studio 64bit
     - `AX12IoRTC/build/AX12IoRTCsln`をVisual Studioで開く．
