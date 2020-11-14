@@ -14,7 +14,7 @@
   - Visual Studio 2019
   - OpenRTM-aist 1.2.1 64bit版
   - Choreonoid 1.7（OpenRTMプラグイン分離前のもの）
-- VRMLモデルは名城大学の大原研究室が公開している[CRANE-simulation](https://github.com/rsdlab/CRANE-simulation)に含まれている[モデル](https://github.com/rsdlab/CRANE-simulation/tree/master/model_project/CRANE_Model)を基にしています．
+- ロボットのモデルは名城大学の大原研究室が公開している[CRANE-simulation](https://github.com/rsdlab/CRANE-simulation)に含まれている[モデル](https://github.com/rsdlab/CRANE-simulation/tree/master/model_project/CRANE_Model)を基にしています．
 - ChoreonoidのBodyIoRTCのコントローラモジュールとして使うRTCモジュール（AX12IoRTC）は独自に作成したものです．
 - 以上を利用するChorenoidのプロジェクトファイルも同梱しています．
 
@@ -34,7 +34,7 @@
 
 ## インストール
 
-- [OpenRTM-aist 1.2.1](http://www.openrtm.org/openrtm/ja/node/6034)をインストール．
+- [OpenRTM-aist 1.2.1](https://www.openrtm.org/openrtm/ja/download/openrtm-aist-cpp/openrtm-aist-cpp_1_2_1_release)をインストール．
 - [Choreonoid 1.7をインストール](https://choreonoid.org/ja/manuals/1.7/index.html)．
   - CMakeの際にINSTALL_SDKオプションにチェックを入れること．
   - Windowsの場合，Choreonoid本体をビルドしたVisual Stduioのバージョンや構成と，ボディRTCのコントローラモジュールをビルドするVisual Stduioのバージョンや構成が異なっていると，動作しません．
@@ -49,7 +49,7 @@
     - 正常終了したら，プロジェクト`INSTALL`をビルド．
   - Linuxの場合
     - `mkdir build; cd build; cmake ..; make; make install`
-  - WindowsとLinuxでプロジェクトファイルを共通にするために，コントローラモジュールの動的ライブラリ（Windowsではdllファイル，Linuxではsoファイル）を`AX12IoRTC/rtc`にインストールするようにしています．
+  - WindowsとLinuxでプロジェクトファイルを共通にするために，RTCモジュールの動的ライブラリ（Windowsではdllファイル，Linuxではsoファイル）を`AX12IoRTC/rtc`にインストールするようにしています．
 
 ## 使い方
 
